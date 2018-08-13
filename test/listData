@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Jack",
+        "sex": "男",
+        "number": 1
+    },
+    {
+        "name": "Marry",
+        "sex": "女",
+        "number": 2
+    },
+    {
+        "name": "Lily",
+        "sex": "女",
+        "number": 3
+    },
+    {
+        "name": "Thomas",
+        "sex": "男",
+        "number": 4
+    }
+]

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title data-lang-tx="web_title"></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="favicon.ico" rel="shortcut icon" />
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <!-- plugins -->
+    <link href="css/lib/bootstrap.min.css" rel="stylesheet">
+    <link href="css/lib/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/lib/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="css/lib/prettify.css" type="text/css" rel="stylesheet" />
+
+    <!-- style -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="loading-page">
+        <div class="div-outside">
+            <div class="item-inside">
+                <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal_help_message" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h4 id="help_message" class="text-center success-text"></h4>
+                </div>
+                <div class="modal-footer">
+                    <div class="success-btn-group text-center">
+                        <button type="button" class="btn btn-default btn-cus-deep" data-dismiss="modal" data-lang-tx="OK"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal_img" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <a data-dismiss="modal">&times;</a>
+                    <a id="modal_img_show" target="_blank"><img /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <header class="top-bar">
+        <a id="sidebar_menu_btn" class="sidebar-menu-btn" type="button"><i class="fa fa-bars fa-lg"></i></a>
+        <a id="web_title" class="custom-link" href="#page_information"><h4 class="web-title" data-lang-tx="web_title"></h4></a>
+        <div class="right-group">
+            <div id="change_lang_group" class="dropdown">
+                <a class="custom-link dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-globe"></i></a>
+                <ul class="dropdown-menu dropdown-menu-right"></ul>
+            </div>
+        </div>
+    </header>
+
+    <ul id="sidebar_menu" class="nav nav-pills nav-stacked title-tab-group">
+        <li class="title-tab-item"><a class="custom-link" href="#page_information"><i class="fa fa-user" aria-hidden="true"></i><p data-lang-tx="page_information"></p></a></li>
+        <li class="title-tab-item"><a class="custom-link" href="#page_collection"><i class="fa fa-book" aria-hidden="true"></i><p data-lang-tx="page_collection"></p></a></li>
+        <li class="title-tab-item"><a class="custom-link" href="#page_demo"><i class="fa fa-file" aria-hidden="true"></i><p data-lang-tx="page_demo"></p></a></li>
+        <p id="version_text"></p>
+    </ul>
+
+    <div class="main-page"></div>
+</body>
+
+<script src="js/lib/jquery-3.1.0.min.js"></script>
+<script src="js/lib/bootstrap.min.js"></script>
+
+<!-- config -->
+<script src="./region.js"></script>
+<script src="js/common/config.js"></script>
+<script src="js/common/config_functions.js"></script>
+
+<!-- plugins -->
+<script src="js/lib/prettify.js"></script>
+<script src="js/lib/echarts.min.js"></script>
+<script src="js/lib/jquery.dataTables.min.js"></script>
+<script src="js/lib/dataTables.bootstrap.min.js"></script>
+<script src="js/lib/markerclusterer.js"></script>
+
+<!-- Custom Btton & Event Functions -->
+<script src="js/common/common-functions.js"></script>
+<script src="js/common/language-functions.js"></script>
+<script src="js/common/index.js"></script>
+
+<!-- plugins Google map API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC2g-bPsAKWbKhnBUhG34aT_bvOxPKfRo"></script>
+
+</html>
