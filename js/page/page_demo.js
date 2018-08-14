@@ -6,13 +6,13 @@ jQuery(document).ready(function($) {
     changeDemoLangPre();
     prettyPrint();
 
-    // 顯示讀取畫面
-    $('.loading-page').fadeIn('slow', function() {
-        // 創建 Google Map
-        initMap();
-        // 隱藏讀取畫面
-        $('.loading-page').fadeOut('slow');
-    });
+    // // 顯示讀取畫面
+    // $('.loading-page').fadeIn('slow', function() {
+    //     // 創建 Google Map
+    //     initMap();
+    //     // 隱藏讀取畫面
+    //     $('.loading-page').fadeOut('slow');
+    // });
 
     $('#demo_lang_input').on('keyup', function() {
         var val = $(this).val();

@@ -129,9 +129,9 @@ notCallback = function() {};
 
 
 /**
- * 進行 ajax
- * @param url 路徑, data 指定對象, type 'GET' or 'POST'等類型, callback callback執行事件, asyncBoolean 是否為非同步處理
- * @returns null
+ * 值行 ajax
+ * @param option.url 路徑, option.type 類型(預設為 GET), option.async 是否開啟同步(預設為非同步), option.cache 是否開啟快取(預設為關閉) , option.headers headers內容(預設為空字串), callback callback function
+ * @returns data ajax回傳結果, status ajax執行結果(error或 success)
  */
 doAjax = function(option, callback) {
     var status, type, cache, asyncBoolean, headers;

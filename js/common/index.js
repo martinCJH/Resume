@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    // 設定分頁
+    pageArray = [];
+    $('#sidebar_menu .title-tab-item').each(function() {
+        var page = $(this).find('.custom-link').attr('href').split('#')[1];
+        pageArray.push(page);
+    });
     hashCheck = true;
     // 初始，偵測 hash並 load對應頁面
     window.onhashchange = loadHashPage();
@@ -54,10 +60,7 @@ $(document).ready(function() {
         $('#modal_img').modal('show');
     });
 });
-
-// 設定分頁
-var pageArray = ['page_information', 'page_collection', 'page_demo'];
-var clearIntervalArray = [];
+clearIntervalArray = [];
 
 // 測試用模式，如果 CF_TEST_LANG不為空
 if (CF_TEST_LANG != '') {
@@ -158,7 +161,8 @@ scrollLoadPageFunction = function() {
         var leastHeight = 10;
         var thisPage = window.location.hash.split('#')[1];
         var thisTouchmoveY = e.originalEvent.touches[0].clientY;
-        if (scrollBottom < leastHeight && scrollBottom == lastScroll && thisTouchmoveY < touchStartY) {
+        var differentTouchmoveH = touchStartY - thisTouchmoveY;
+        if (scrollBottom < leastHeight && scrollBottom == lastScroll && differentTouchmoveH >= 200) {
             $('.footer .fa.fa-angle-double-down').addClass('hide');
             $('.footer .fa.fa-circle-o-notch').removeClass('hide');
             if (!doingSetTimeout) {
