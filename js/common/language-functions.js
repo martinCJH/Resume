@@ -1,10 +1,14 @@
+console.log('aaaaaaaaaaaaaaaaa');
 jQuery(document).ready(function($) {
+  console.log('bbbbbbbbbbbbbbbbbb');
     // 獲取語言檔案資訊
     $.ajax({
         url: './js/resource',
         async: false,
         success: function(data) {
+          console.log('ccccccccccccccccccccccc');
             $(data).find("a:contains(.json)").each(function() {
+              console.log('fffffffffffffffffffff');
                 var fileName = $(this).attr("href").split('.')[0];
                 langArray.push(fileName);
                 langName = languageList[fileName];
@@ -29,6 +33,7 @@ jQuery(document).ready(function($) {
         }
     });
 });
+console.log('ddddddddddddddddddddddd');
 
 // 創建，獲取的JOSN檔
 var langData;
