@@ -18,7 +18,9 @@ $.ajax({
                 langName = fileName;
             }
             var el = '<li><a class="custom-link" data-lang="' + fileName + '">' + langName + '</a></li>';
+            console.log(el);
             $('#change_lang_group .dropdown-menu').append(el);
+            console.log($('#change_lang_group .dropdown-menu'));
         });
     }
 });
