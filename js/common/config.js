@@ -2,7 +2,7 @@
 var CF_TEST_LANG = '';
 
 // ------ version ------
-var CF_MAJOR_VERSION = '0';
+var CF_MAJOR_VERSION = '1';
 var CF_MINOR_VERSION = '0';
 var CF_BULID_VERSION = '0';
 var CF_COMMIT_ID = '';
