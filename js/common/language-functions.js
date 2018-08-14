@@ -1,41 +1,41 @@
+jQuery(document).ready(function($) {
+    // 獲取語言檔案資訊
+    $.ajax({
+        url: './js/resource',
+        async: false,
+        success: function(data) {
+            $(data).find("a:contains(.json)").each(function() {
+                var fileName = $(this).attr("href").split('.')[0];
+                langArray.push(fileName);
+                langName = languageList[fileName];
+                if (langName == undefined) {
+                    langName = fileName;
+                }
+                var el = '<li><a class="custom-link" data-lang="' + fileName + '">' + langName + '</a></li>';
+                $('#change_lang_group .dropdown-menu').append(el);
+            });
+        }
+    });
+
+    $('#change_lang_group .dropdown-menu').on('click', '[data-lang]', function() {
+        var lang = $(this).attr('data-lang');
+        if (lang != lastLang) {
+            addCookie('lang', lang);
+            console.warn('change lang => ' + lang);
+            $('[data-lang-tx]').each(function() {
+                $(this).html('');
+            });
+            changeLang(lang);
+        }
+    });
+});
+
 // 創建，獲取的JOSN檔
 var langData;
 // 定義，可使用的語言
 var langArray = [];
 // 創建，最後所定義的語言
 var lastLang;
-
-// 獲取語言檔案資訊
-$.ajax({
-    url: './js/resource',
-    async: false,
-    success: function(data) {
-        $(data).find("a:contains(.json)").each(function() {
-            var fileName = $(this).attr("href").split('.')[0];
-            langArray.push(fileName);
-            langName = languageList[fileName];
-            if (langName == undefined) {
-                langName = fileName;
-            }
-            var el = '<li><a class="custom-link" data-lang="' + fileName + '">' + langName + '</a></li>';
-            console.log(el);
-            $('#change_lang_group .dropdown-menu').append(el);
-            console.log($('#change_lang_group .dropdown-menu'));
-        });
-    }
-});
-
-$('#change_lang_group .dropdown-menu').on('click', '[data-lang]', function() {
-    var lang = $(this).attr('data-lang');
-    if (lang != lastLang) {
-        addCookie('lang', lang);
-        console.warn('change lang => ' + lang);
-        $('[data-lang-tx]').each(function() {
-            $(this).html('');
-        });
-        changeLang(lang);
-    }
-});
 
 /**
  * 執行語言判斷並匯入文案
