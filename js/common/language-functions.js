@@ -1,25 +1,18 @@
 jQuery(document).ready(function($) {
     // 獲取語言檔案資訊
-    $.ajax({
-        url: 'js/resource',
-        error: function(data) {
-            console.log("%c" + 'error', 'color: #9c3d3d;');
-            console.log(JSON.stringify(data));
-        },
-        success: function(data) {
-            console.log("%c" + 'success', 'color: #3d9c60;');
-            console.log(data);
-            $(data).find("a:contains(.json)").each(function() {
-                var fileName = $(this).attr("href").split('.')[0];
-                langArray.push(fileName);
-                langName = languageList[fileName];
-                if (langName == undefined) {
-                    langName = fileName;
-                }
-                var el = '<li><a class="custom-link" data-lang="' + fileName + '">' + langName + '</a></li>';
-                $('#change_lang_group .dropdown-menu').append(el);
-            });
-        }
+    $('#change_lang_group .dropdown-menu').load('./js/resource', function(data) {
+        $('#change_lang_group .dropdown-menu').html('');
+        $(data).find("a:contains(.json)").each(function() {
+            var fileName = $(this).attr("href").split('.')[0];
+            langArray.push(fileName);
+            langName = languageList[fileName];
+            if (langName == undefined) {
+                langName = fileName;
+            }
+            var el = '<li><a class="custom-link" data-lang="' + fileName + '">' + langName + '</a></li>';
+            $('#change_lang_group .dropdown-menu').append(el);
+        });
+        changeLang();
     });
 
     $('#change_lang_group .dropdown-menu').on('click', '[data-lang]', function() {
