@@ -1,14 +1,16 @@
-console.log('aaaaaaaaaaaaaaaaa');
 jQuery(document).ready(function($) {
-  console.log('bbbbbbbbbbbbbbbbbb');
     // 獲取語言檔案資訊
     $.ajax({
         url: './js/resource',
         async: false,
+        error: function(data) {
+            console.log("%c" + 'error', 'color: #9c3d3d;');
+            console.log(JSON.stringify(data));
+        },
         success: function(data) {
-          console.log('ccccccccccccccccccccccc');
+            console.log("%c" + 'success', 'color: #3d9c60;');
+            console.log(data);
             $(data).find("a:contains(.json)").each(function() {
-              console.log('fffffffffffffffffffff');
                 var fileName = $(this).attr("href").split('.')[0];
                 langArray.push(fileName);
                 langName = languageList[fileName];
@@ -33,7 +35,6 @@ jQuery(document).ready(function($) {
         }
     });
 });
-console.log('ddddddddddddddddddddddd');
 
 // 創建，獲取的JOSN檔
 var langData;
