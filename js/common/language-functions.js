@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
     // 獲取語言檔案資訊
     $.ajax({
         url: './js/resource',
-        async: false,
         error: function(data) {
             console.log("%c" + 'error', 'color: #9c3d3d;');
             console.log(JSON.stringify(data));
